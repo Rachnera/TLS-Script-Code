@@ -26,6 +26,8 @@ class Game_Map
 
           sub_z = (old_tid - 2048) % 48
           old_tid = old_tid - sub_z
+          next unless old_tid >= 2048
+
           new_tile = tiles[old_tid]
           next unless new_tile && new_tile != old_tid
           next unless new_tile >= 2048
