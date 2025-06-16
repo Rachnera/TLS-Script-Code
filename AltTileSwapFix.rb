@@ -24,10 +24,6 @@ class Game_Map
           old_tid = base_map_data[x, y, z] || 0 # Cf Game_Map#tile_id
           next unless old_tid >= 2048
 
-          autotile = (old_tid - 2048) / 48
-          # Cascade or wall, cf bottom half of Game_Map#perform_load_new_map_data
-          next unless (autotile == 5 or autotile == 7 or autotile == 9 or autotile == 11 or autotile == 13 or autotile == 15) or (autotile >= 48 and autotile <= 79 or autotile >= 88 and autotile <= 95 or autotile >= 104 and autotile <= 111 or autotile >= 120 and autotile <= 127)
-
           sub_z = (old_tid - 2048) % 48
           old_tid = old_tid - sub_z
           next unless old_tid >= 2048
